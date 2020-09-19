@@ -110,31 +110,70 @@ console.log(dogFeeder(15, 1))
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
+function rpsGame(input) {
 
+	//convert user choice to number
+	if (input === "rock") {
+		var userChoice = 1;
+	} else if (input === "paper") {
+		var userChoice = 2;
+	} else if (input === "sissors") {
+		var userChoice = 3;
+	}
 
+	//computer's choice
+	const compChoice = Math.floor(Math.random() * 3) + 1
+
+	//determine winner
+	if (userChoice === compChoice) {
+		console.log("Draw!");
+	} else if (userChoice === 1 && compChoice === 2) {
+		console.log("You Lose!");
+	} else if (userChoice === 1 && compChoice === 3) {
+		console.log("You Win!");
+	} else if (userChoice === 2 && compChoice === 1) {
+		console.log("You Win!");
+	} else if (userChoice === 2 && compChoice === 3) {
+		console.log("You Lose!");
+	} else if (userChoice === 3 && compChoice === 1) {
+		console.log("You Lose!");
+	} else if (userChoice === 3 && compChoice === 2) {
+		console.log("You Win!");
+	}
+}
+
+rpsGame("paper")
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
+function convertMiles(km) {
+	console.log(km * .62137119);
+}
 
-
-
+convertMiles(1354)
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
 
+function convertCM(feet) {
+	console.log(feet * 30.48);
+}
 
-
-
+convertCM(48)
 
 /************************************************************** Task 6 **************************************************************/
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
 
+function annoyingSong(start) {
+	while (start > 0) {
+		console.log(`${start} bottles of soda on the wall, ${start} bottles of soda, take one down pass it around ${--start} bottles of soda on the wall`)
+	}
+}
 
-
-
+annoyingSong(10)
 
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
