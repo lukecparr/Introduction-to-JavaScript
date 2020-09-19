@@ -1,25 +1,36 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
+const votingAge = 19
 
+if (votingAge > 18) {
+	console.log(true);
+} else {
+
+}
 
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
+let varOne = 10
+let varTwo = 5
 
+varOne = varOne * varTwo
 
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
-
+Number("1999")
 
 
 
 //Task d: Write a function to multiply a*b 
 
-
+function multiply(a, b) {
+	return a * b;
+}
 
 
 
@@ -27,8 +38,9 @@
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
-
-
+function dogDays(age) {
+	return age * 7;
+}
 
 
 /************************************************************** Task 3 **************************************************************/
@@ -48,8 +60,46 @@
 // 7 - 12 months 4% of their body weight
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
-  
 
+function dogFeeder(weight, age) {
+	// adult dogs at least 1 year 
+	if (age >= 1) {
+		// up to 5 lbs - 5% of their body weight
+		if (weight <= 5) {
+			return weight * .05;
+		}
+		// 6 - 10 lbs - 4% of their body weight 
+		else if (weight >= 6 && weight <= 10) {
+			return weight * .04;
+		}
+		// 11 - 15 lbs - 3% of their body weight 
+		else if (weight >= 11 && weight >= 15) {
+			return weight * .03;
+		}
+		// > 15lbs - 2% of their body weight 
+		else if (weight > 15) {
+			return weight * .02;
+		}
+
+	}
+	// Puppies less than 1 year
+	else if (age < 1) {
+		// 2 - 4 months 10% of their body weight
+		if (age >= .16 && age < .33) {
+			return weight * .1;
+		}
+		// 4 - 7 months 5% of their body weight
+		else if (age >= .33 && age < .58) {
+			return weight * .05;
+		}
+		// 7 - 12 months 4% of their body weight
+		else if (age >= .58) {
+			return weight * .04;
+		}
+	}
+}
+
+console.log(dogFeeder(15, 1))
 
 
 
@@ -60,8 +110,8 @@
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  
-  
+
+
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
@@ -72,7 +122,7 @@
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
-  
+
 
 
 
@@ -81,7 +131,7 @@
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
-  
+
 
 
 
@@ -94,10 +144,10 @@
 //70s should be Cs 
 //60s should be D 
 //and anything below 60 should be F
-  
 
-  
-  
+
+
+
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
@@ -111,8 +161,3 @@
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
-
-
-
-
-
