@@ -99,7 +99,7 @@ function dogFeeder(weight, age) {
 	}
 }
 
-// console.log(dogFeeder(15,1))
+console.log(dogFeeder(15, 1))
 
 
 
@@ -142,7 +142,7 @@ function rpsGame(input) {
 	}
 }
 
-// rpsGame("paper")
+rpsGame("paper")
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
@@ -152,7 +152,7 @@ function convertMiles(km) {
 	console.log(km * .62137119);
 }
 
-// convertMiles(1354)
+convertMiles(1354)
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
 
@@ -160,7 +160,7 @@ function convertCM(feet) {
 	console.log(feet * 30.48);
 }
 
-// convertCM(48)
+convertCM(48)
 
 /************************************************************** Task 6 **************************************************************/
 // 99 bottles of soda on the wall
@@ -173,7 +173,7 @@ function annoyingSong(start) {
 	}
 }
 
-// annoyingSong(10)
+annoyingSong(10)
 
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
@@ -203,29 +203,60 @@ function autoGrader(num) {
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
-function countVowels(string) {
-	let len = string.length
+function countVowels(str) {
+	let low = str.toLowerCase()
+	let chars = low.split("")
+	let len = chars.length
+	let count = 0
 
-	let vowels = 0
-
-	for (i = len; i >= 0; --i) {
-		if (string.charAt(i) === "a" ||
-			string.charAt(i) === "e" ||
-			string.charAt(i) === "i" ||
-			string.charAt(i) === "o" ||
-			string.charAt(i) === "u") {
-
-			vowels++;
-			console.log(vowels)
-		} else {
-			return
+	for (let i = 0; i < len; i++) {
+		if (chars[i] === "a" ||
+			chars[i] === "e" ||
+			chars[i] === "i" ||
+			chars[i] === "o" ||
+			chars[i] === "u") {
+			count++;
 		}
 	}
-	// console.log(vowels)
+	console.log(count)
 }
 
-countVowels("apples are rare")
+countVowels("Apples Are rAreish you")
 
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
+
+function rpsGame(input) {
+
+	//convert user choice to number
+	if (input === "rock") {
+		var userChoice = 1;
+	} else if (input === "paper") {
+		var userChoice = 2;
+	} else if (input === "sissors") {
+		var userChoice = 3;
+	}
+
+	//computer's choice
+	const compChoice = Math.floor(Math.random() * 3) + 1
+
+	//determine winner
+	if (userChoice === compChoice) {
+		console.log("Draw!");
+	} else if (userChoice === 1 && compChoice === 2) {
+		console.log("You Lose!");
+	} else if (userChoice === 1 && compChoice === 3) {
+		console.log("You Win!");
+	} else if (userChoice === 2 && compChoice === 1) {
+		console.log("You Win!");
+	} else if (userChoice === 2 && compChoice === 3) {
+		console.log("You Lose!");
+	} else if (userChoice === 3 && compChoice === 1) {
+		console.log("You Lose!");
+	} else if (userChoice === 3 && compChoice === 2) {
+		console.log("You Win!");
+	}
+}
+
+rpsGame(prompt("Enter your choice", "rock, paper, or sissors?"))
